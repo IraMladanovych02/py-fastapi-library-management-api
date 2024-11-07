@@ -19,7 +19,7 @@ def get_db() -> Session:
 
 @app.get("/")
 def root() -> dict:
-    return {"message": "Hello form Library"}
+    return {"message": "Hello from Library"}
 
 
 @app.get("/books/", response_model=list[schemas.Book])
@@ -44,7 +44,7 @@ def create_book(
 
 
 @app.get("/authors/", response_model=list[schemas.Author])
-def read_cheese(
+def read_authors(
     book: str | None = None,
     db: Session = Depends(get_db),
 ):

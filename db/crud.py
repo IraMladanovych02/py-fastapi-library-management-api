@@ -33,7 +33,7 @@ def get_author_list(
     queryset = db.query(models.DBAuthor)
 
     if books is not None:
-        queryset = queryset.filter(models.DBAuthor.book.has(title=books))
+        queryset = queryset.filter(models.DBAuthor.books.any(title=books))
 
     return queryset.all()
 

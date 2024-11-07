@@ -15,9 +15,9 @@ class DBBook(Base):
 
 
 class DBAuthor(Base):
-    __tablename__ = "cheese"
+    __tablename__ = "author"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False, unique=True)
     bio = Column(String(255), nullable=False)
-    book = relationship(DBBook)
+    books = relationship(DBBook)
