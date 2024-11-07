@@ -20,4 +20,4 @@ class DBAuthor(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False, unique=True)
     bio = Column(String(255), nullable=False)
-    books = relationship(DBBook)
+    book = relationship(DBBook)
